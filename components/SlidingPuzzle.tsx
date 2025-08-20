@@ -41,7 +41,7 @@ function neighborsOf(emptyIndex: number, size: number) {
 
 /** Shuffle by making a long random walk from the solved state (guaranteed solvable). */
 function shuffleSolvable(size: number, steps = 300) {
-  let tiles = createSolved(size);
+  const tiles = createSolved(size);
   let empty = tiles.indexOf(0);
 
   for (let i = 0; i < steps; i++) {
@@ -104,7 +104,7 @@ export default function SlidingPuzzle({
     if (!game.startedAt) return 0;
     const end = game.finishedAt ?? Date.now();
     return Math.floor((end - game.startedAt) / 1000);
-  }, [game.startedAt, game.finishedAt, redraw]);
+  }, []);
 
   function onTileClick(index: number) {
     if (game.finishedAt) return;
@@ -147,7 +147,7 @@ export default function SlidingPuzzle({
   }
 
   const sidePx = 360; // puzzle board pixel size (responsive wrapper handles scaling)
-  const tileCount = game.size * game.size;
+  // removed unused variable tileCount
 
   return (
     <div className="w-full max-w-xl mx-auto p-4">

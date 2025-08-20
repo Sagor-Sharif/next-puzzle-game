@@ -12,7 +12,7 @@ export default function Page() {
   return (
     <main className="min-h-screen p-6 flex items-center justify-center">
       {/* Only render SlidingPuzzle on the client to avoid hydration mismatch */}
-  {mounted && <SlidingPuzzle imageSrc={"/mina-raju.png"} size={3} />}
+  {mounted && <SlidingPuzzle imageSrc={"/arfi"} size={3} />}
     </main>
   );
 }
